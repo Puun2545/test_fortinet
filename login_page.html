@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Firewall Authentication</title>
+  </head>
+  <!-- You will not be able to see this text. -->
+  <body>
+    <div class="message-container">
+      <div class="logo"></div>
+
+      <h1>Authentication Required</h1>
+
+      <form action="%%AUTH_POST_URL%%" method="post">
+        <!-- I thinks it is some API that call RE-Direct, Magic-ID (??), Method-ID (??)  -->
+        <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%" />
+
+        <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%" />
+
+        <input type="hidden" name="%%METHODID%%" value="%%METHODVAL%%" />
+
+        <!-- Question API That show text  -->
+        <p>%%QUESTION%%</p>
+
+        <div class="field">
+          <label for="ft_un"> Username </label>
+
+          <div>
+            <input
+              name="%%USERNAMEID%%"
+              id="ft_un"
+              type="text"
+              autocorrect="off"
+              autocapitalize="off"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ft_pd"> Password </label>
+
+          <div>
+            <input
+              name="%%PASSWORDID%%"
+              id="ft_pd"
+              type="password"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button class="primary" type="submit">login</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
