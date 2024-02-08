@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>IT KMITL | Authentication</title>
     <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://www.it.kmitl.ac.th/wp-content/uploads/2017/12/cropped-it-logo-180x180.png"
-    />
-    <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
@@ -29,12 +24,15 @@
         filter: blur(1.5px);
       }
       body h1 {
-        color: rgb(40, 40, 40);
+        color: rgb(34, 34, 34);
       }
       .logo {
         /* %%IMAGE:itkmitl_logo%% */
         background: url("https://identity.it.kmitl.ac.th/static/img/logo.png")
           center/contain no-repeat;
+      }
+      .text-red {
+        color: red;
       }
     </style>
   </head>
@@ -56,19 +54,24 @@
       class="message-container bg-white rounded-lg shadow-lg p-8 sm:w-96 w-80 drop-shadow-md relative"
     >
       <div class="logo h-20 p-2 w-full sm:w-full"></div>
-      <h1 class="text-2xl font-semibold mb-4 mt-2">Authentication Required</h1>
+      <h1 class="text-2xl font-semibold mb-4 mt-2">
+        Authentication <span class="text-red">Failed</span>
+      </h1>
       <form action="%%AUTH_POST_URL%%" method="post">
         <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%" />
         <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%" />
         <input type="hidden" name="%%METHODID%%" value="%%METHODVAL%%" />
-        <p class="text-gray-600 mb-4">%%QUESTION%%</p>
+        <p class="text-gray-600 mb-1">
+          <span class="text-red">Error:</span> Login Invalid
+        </p>
+        <p class="text-gray-600 mb-4">Please ensure your username/password</p>
         <div class="field mb-4">
           <label for="ft_un" class="block mb-2">Username</label>
           <input
             name="%%USERNAMEID%%"
             id="ft_un"
             type="text"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none"
+            class="w-full px-4 py-2 border border-red-600 rounded-md focus:border-gray-500 focus:outline-none"
             autocorrect="off"
             autocapitalize="off"
             placeholder="itxxxxxxxx"
@@ -80,7 +83,7 @@
             name="%%PASSWORDID%%"
             id="ft_pd"
             type="password"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none"
+            class="w-full px-4 py-2 border border-red-600 rounded-md focus:border-gray-500 focus:outline-none"
             autocomplete="off"
           />
         </div>
@@ -92,6 +95,11 @@
           Login
         </button>
       </form>
+    </div>
+    <div class="block relative opacity-10 left-20">
+      <p>ig: p_v2.8</p>
+      <p>ig: oat_chayanont</p>
+      <p>ig: pola_.wav</p>
     </div>
   </body>
 </html>
