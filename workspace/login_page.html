@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Firewall Authentication</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-        .logo {
-            background: url('./img/logo.png') center/cover ;
-        }
+      body img{
+        /* %%IMAGE:itkmitl_bg%% */
+        filter: blur(1.5px);
+        
+      }
+      body h1{
+        /* %%IMAGE:itkmitl_bg%% */
+        color: rgb(34, 34, 34) ;
+        
+      }
+      .logo {
+        /* %%IMAGE:itkmitl_logo%% */
+        background: url("./img/logo.png") center/contain no-repeat;
+
+      }
     </style>
-</head>
+  </head>
 
-<body class="h-screen flex items-center justify-center bg-gray-100">
-    <div class="message-container bg-white rounded-lg shadow-lg p-8 w-96">
-        <div class="logo bg-url bg-cover bg-center h-20 p-2"></div>
-        <h1 class="text-2xl font-semibold mb-4">Authentication Required</h1>
-        <form action="%%AUTH_POST_URL%%" method="post">
-            <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%">
-            <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%">
-            <input type="hidden" name="%%METHODID%%" value="%%METHODVAL%%">
-            <p class="text-gray-600 mb-4">%%QUESTION%%</p>
-            <div class="field mb-4">
-                <label for="ft_un" class="block mb-2">Username</label>
-                <input name="%%USERNAMEID%%" id="ft_un" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none" autocorrect="off" autocapitalize="off">
-            </div>
-            <div class="field mb-4">
-                <label for="ft_pd" class="block mb-2">Password</label>
-                <input name="%%PASSWORDID%%" id="ft_pd" type="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none" autocomplete="off">
-            </div>
-            
-            <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type="submit">Continue</button>
-        </form>
+  <body class="h-screen flex items-center justify-center bg-blue-600">
+    <!-- -->
+    <img class="w-full h-full object-cover absolute bg-gradient-to-r from-cyan-500 to-blue-500" src="./img/wallpaper.jpeg" alt="wallpaper">
+    <div class="message-container bg-white rounded-lg shadow-lg p-8 sm:w-96 w-80 drop-shadow-md relative">
+      <div class="logo h-20 p-2 w-full sm:w-full"></div>
+      <h1 class="text-2xl font-semibold mb-4 ">Authentication Required</h1>
+      <form action="%%AUTH_POST_URL%%" method="post">
+        <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%" />
+        <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%" />
+        <input type="hidden" name="%%METHODID%%" value="%%METHODVAL%%" />
+        <p class="text-gray-600 mb-4">%%QUESTION%%</p>
+        <div class="field mb-4">
+          <label for="ft_un" class="block mb-2">Username</label>
+          <input
+            name="%%USERNAMEID%%"
+            id="ft_un"
+            type="text"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none"
+            autocorrect="off"
+            autocapitalize="off"
+          />
+        </div>
+        <div class="field mb-4">
+          <label for="ft_pd" class="block mb-2">Password</label>
+          <input
+            name="%%PASSWORDID%%"
+            id="ft_pd"
+            type="password"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none"
+            autocomplete="off"
+          />
+        </div>
+
+        <button
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mt-4"
+          type="submit"
+        >
+          Login
+        </button>
+      </form>
     </div>
-</body>
-
+    <div class='block relative opacity-10 left-20'>
+        <p>ig: p_v2.8</p>
+        <p>ig: oat_chayanont</p>
+        <p>ig: pola_.wav</p>
+    </div>
+  </body>
 </html>

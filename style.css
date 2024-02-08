@@ -45,6 +45,7 @@ button.primary {
   width: 600px;
   padding: 0;
   margin: 10px;
+  
 }
 .logo {
   background: url(%%IMAGE:itkmitl_logo%%) no-repeat left center;
@@ -53,7 +54,7 @@ button.primary {
   object-fit: contain;
 }
 table {
-  background-color: #fff;
+  background-color: rgb(34, 34, 34);
   border-spacing: 0;
   margin: 1em;
 }
